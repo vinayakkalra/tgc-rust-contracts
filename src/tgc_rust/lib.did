@@ -1,0 +1,13 @@
+type InitArgs = record {
+    payment_recipient : principal;
+};
+
+service: (InitArgs) -> {
+    "getPaymentRecipient": () -> (principal) query;
+    "buySession": (nat64, principal, nat64) -> ();
+    "strtSession": (principal) -> ();
+    "pauseSession": (principal) -> ();
+    "checkSession": (principal) -> (nat64, bool) query;
+    "updateSession": (nat64, principal, nat64) -> ();
+    "getSessionTimeLeft": (principal) -> (nat64) query;
+}

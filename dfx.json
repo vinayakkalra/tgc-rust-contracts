@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "canisters": {
+    "tgc_rust": {
+      "type": "custom",
+      "candid": "src/tgc_rust/lib.did",
+      "wasm": "target/wasm32-unknown-unknown/release/tgc_rust-opt.wasm",
+      "build": "sh build.sh tgc_rust",
+      "dependencies": [
+        "ledger"
+      ]
+    },
+    "ledger": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/91bf38ff3cb927cb94027d9da513cd15f91a5b04/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/91bf38ff3cb927cb94027d9da513cd15f91a5b04/canisters/ic-icrc1-ledger.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "output": "canisters/"
+    }
+  }
+}

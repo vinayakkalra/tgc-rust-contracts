@@ -1,0 +1,8 @@
+[workspace]
+members = ["src/tgc_rust"]
+
+[workspace.dependencies]
+candid = "0.9.8"
+ic-cdk = "0.11.0"
+ic-cdk-bindgen = "0.1"
+ic-cdk-macros = "0.8.0"
